@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload PDF and Embeddings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #007acc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload PDF and Embeddings</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="pdf_file">Select PDF files (multiple):</label>
+        <input type="file" name="pdf_file" id="pdf_file" multiple ><br><br>
+        <input type="submit" value="Upload and Process">
+    </form>
+    {% if result %}
+        <h2>Processing Results:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
